@@ -1,0 +1,33 @@
+div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> State</strong></div>
+    <!---##############################################start STATE####################################################333-->
+                <div class="panel-body">
+                   
+                    {{state}}
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <span class="ui-select">
+                            <select ng-model="state.zone">
+                                <option ng-repeat="value in getzone" value="{{value.id}}" disabled>{{value.name}}</option>
+                            </select>
+                           
+                        </span>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="state.name" placeholder="Name" disabled>
+                        </div>
+                      <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/zone/state"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+                    </form>
+                   
+                    
+                </div>
+    <!---##############################################End STATE####################################################333-->
+
+            </div>
+           
+        </div>
+    </div>

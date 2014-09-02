@@ -1,0 +1,121 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Retailer</strong></div>
+                
+                <div class="panel-body" ng-controller="createretailer">
+                  <!--DEmo###############################################-->
+                    {{retailer}}
+                  <!--DEmo###############################################-->
+                          
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="retailer.name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Code</label>
+                            <input type="text" class="form-control" ng-model="retailer.code" placeholder="code">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Company Name</label>
+                            <input type="text" class="form-control" ng-model="retailer.compony_name" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="retailer.email" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact No.</label>
+                            <input type="text" class="form-control" ng-model="retailer.contactno" placeholder="Contact Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <textarea class="form-control" ng-model="retailer.address" placeholder="Address"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact Person</label>
+                            <input type="text" class="form-control" ng-model="retailer.contactperson" placeholder="Contact Person">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Lat</label>
+                            <input type="text" class="form-control" ng-model="retailer.lat" placeholder="Lat">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Long</label>
+                            <input type="text" class="form-control" ng-model="retailer.long" placeholder="Long">
+                        </div>
+                        <label for="exampleInputEmail1">Area</label>
+                       <div>
+                        <span class="ui-select">
+                            <select  ng-model="retailer.area" >
+                                <option ng-repeat="value in getarea" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">date Of Birth</label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-group ui-datepicker">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="date" ng-model="retailer.dob">
+                                    </div>
+                                   </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Type Of Area</label>
+                            <input type="text" class="form-control" ng-model="retailer.type_of_area" placeholder="Type Of Area">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sq. Feet</label>
+                            <input type="text" class="form-control" ng-model="retailer.sq_feet" placeholder="Sq. Feet">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image</label>
+                            <!--##########################################3img upload-->
+                            <div class="upload-div" ng-controller="MyCtrl">
+                                <div ng-init="httpMethod = 'POST';howToSend = 1;" ></div>
+
+                                <div class="upload-buttons">
+                                    <input type="file" ng-file-select="onFileSelect($files)" onclick="this.value=null">
+                                </div>
+
+                                <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true"
+                                    ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100">or drop files here</div>
+                                <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>
+
+                                <div class="err" ng-show="errorMsg != null">{{errorMsg}}</div>
+
+                                <center><div ng-show="selectedFiles != null">
+                                    <div class="sel-file center" ng-repeat="f in selectedFiles">
+                                        <div ng-show="$last">
+                                            <img ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}" width="240px">
+                                        </div>
+                                    </div>
+                                </div></center>
+                                <div class="response" ng-show="uploadResult.length > 0">
+                                    <span ng-repeat="result in uploadResult">
+
+                                                <p ng-show="$last">{{result}}</p>
+                                                <input type="text" class="form-control" value="{{result}}" ng-model="retailer.store_image">
+
+                                    </span>
+
+                                </div>
+                            </div>
+                            <!--##########################################3img upload-->
+                        </div>
+
+                        
+                        <button type="submit" ng-click="create(retailer)" class="btn btn-success btn-primary">Submit</button>
+
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

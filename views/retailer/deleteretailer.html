@@ -1,0 +1,91 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Retailer</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                    {{retailer}}
+                  <!--DEmo###############################################-->
+                          
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="retailer.name" placeholder="Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Code</label>
+                            <input type="text" class="form-control" ng-model="retailer.code" placeholder="code" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Company Name</label>
+                            <input type="text" class="form-control" ng-model="retailer.compony_name" placeholder="Company Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="retailer.email" id="exampleInputEmail1" placeholder="Enter email" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact No.</label>
+                            <input type="text" class="form-control" ng-model="retailer.contactno" placeholder="Contact Number" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <textarea class="form-control" ng-model="retailer.address" placeholder="Address" disabled></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact Person</label>
+                            <input type="text" class="form-control" ng-model="retailer.contactperson" placeholder="Contact Person" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Lat</label>
+                            <input type="text" class="form-control" ng-model="retailer.lat" placeholder="Lat" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Long</label>
+                            <input type="text" class="form-control" ng-model="retailer.long" placeholder="Long" disabled>
+                        </div>
+                        <label for="exampleInputEmail1">Area</label>
+                       <div>
+                        <span class="ui-select">
+                            <select  ng-model="retailer.area" disabled>
+                                <option ng-repeat="value in getarea" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">date Of Birth</label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-group ui-datepicker">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="date" ng-model="retailer.dob">
+                                    </div>
+                                   </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Type Of Area</label>
+                            <input type="text" class="form-control" ng-model="retailer.type_of_area" placeholder="Type Of Area" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sq. Feet</label>
+                            <input type="text" class="form-control" ng-model="retailer.sq_feet" placeholder="Sq. Feet" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image</label>
+                            <input type="text" class="form-control" ng-model="retailer.store_image" placeholder="Image" disabled>
+                        </div>
+
+                        
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/retailer"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+    
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

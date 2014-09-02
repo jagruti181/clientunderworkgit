@@ -1,0 +1,63 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Distributor</strong></div>
+                
+                <div class="panel-body" ng-controller="createdistributor">
+                  <!--DEmo###############################################-->
+                  {{demo}}
+                  <!--DEmo###############################################-->
+                          
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="distributor.name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Code</label>
+                            <input type="text" class="form-control" ng-model="distributor.code" placeholder="code">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Company Name</label>
+                            <input type="text" class="form-control" ng-model="distributor.companyname" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="distributor.email" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact No.</label>
+                            <input type="text" class="form-control" ng-model="distributor.contactno" placeholder="Contact Number">
+                        </div>
+                        <!--div class="panel-body form-group">
+                           <label for="exampleInputEmail1">Start Date</label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-group ui-datepicker">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" 
+                                               class="form-control"
+                                               datepicker-popup="{{format}}"
+                                               ng-model="distributor.dob"
+                                               >
+                                    </div>
+                                   </div>
+                            </div>
+                        </div-->
+                        <div class="input-group form-group ui-datepicker">
+                            <label for="exampleInputEmail1">Date Of Birth</label>
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="date" ng-model="distributor.dob">
+                        </div>
+
+                        <a href="#/distributor">
+                        <button type="submit" ng-click="create(distributor.name,distributor.code,distributor.companyname,distributor.email,distributor.contactno,distributor.dob)" class="btn btn-success btn-primary">Submit</button>
+    </a>
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

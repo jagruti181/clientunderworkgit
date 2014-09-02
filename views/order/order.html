@@ -1,0 +1,48 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Order</strong>
+                
+                </div>
+                
+                <div class="panel-body" ng-controller="order">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                  <div class="bot">
+               <a href="#/order/createorder" class="right btn btn-primary">Create Order</a>
+                </div>
+                        
+                     <!--table loguser######################################-->
+                     <table class="table table-bordered table-striped">
+                        <thead><tr class="bg-dark">
+                            <th class="text-center">ID</th>
+                            <th class="text-center">RETAILER</th>
+                            <th class="text-center">SALES</th>
+                            <th class="text-center">TIMESTAMP</th>
+                            <th class="text-center">AMOUNT</th>
+                            <th class="text-center">SIGNATURE</th>
+                            <th colspan="2" class="text-center">OPERATIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="value in find">
+                            <td class="text-center">{{value.id}}</td>
+                            <td class="text-center">{{value.retail}}</td>
+                            <td class="text-center">{{value.sales}}</td>
+                            <td class="text-center">{{value.timestamp}}</td>
+                            <td class="text-center">{{value.amount}}</td>
+                            <td class="text-center">{{value.signature}}</td>
+                            <td class="text-center"><a href="#/order/delete/{{value.id}}" class="btn btn-primary"><i class="fa fa-times"></i></a></td>
+                            <td class="text-center"><a href="#/order/edit/{{value.id}}" class="btn btn-primary">
+                                <i class="fa fa-pencil-square-o"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                
+        </div>
+        </section>
+        </div>
+    </div>

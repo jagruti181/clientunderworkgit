@@ -1,0 +1,33 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> City</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                    {{city}}
+                  <!--DEmo###############################################-->       
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div>
+                        <span class="ui-select">
+                            <select  ng-model="city.state" disabled>
+                                <option ng-repeat="value in getstate" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="city.name" placeholder="Name" disabled>
+                        </div>
+                        
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/zone/city"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+    
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

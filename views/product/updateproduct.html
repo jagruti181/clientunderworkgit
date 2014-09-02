@@ -1,0 +1,89 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Product</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                    {{product}}
+                  <!--DEmo###############################################-->
+                          
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="product.name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Encode</label>
+                            <input type="text" class="form-control" ng-model="product.encode" placeholder="Encode">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Code</label>
+                            <input type="text" class="form-control" ng-model="product.productcode" placeholder="Product Code">
+                        </div>
+                        <label for="exampleInputEmail1">Category</label>
+                        <div>
+                        <span class="ui-select">
+                            <select  ng-model="product.category" >
+                                <option ng-repeat="value in getcategory" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Video</label>
+                            <input type="text" class="form-control" ng-model="product.video" placeholder="Video">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mrp</label>
+                            <input type="text" class="form-control" ng-model="product.mrp" placeholder="Mrp">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <input type="text" class="form-control" ng-model="product.description" placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Age</label>
+                            <input type="text" class="form-control" ng-model="product.age" placeholder="Age">
+                        </div>
+                        <label for="exampleInputEmail1">Scheme</label>
+                        <div>
+                        <span class="ui-select">
+                            <select  ng-model="product.scheme" >
+                                <option ng-repeat="value in getscheme" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Is New</label>
+                            <div>
+                        <label class="ui-radio"><input name="radio1" ng-model="product.isnew" type="radio" value="1" ><span>Yes</span></label>
+                        <label class="ui-radio"><input name="radio1" ng-model="product.isnew" type="radio" value="2" checked><span>No</span></label>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">Timestamp</label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-group ui-datepicker">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" 
+                                               class="form-control"
+                                               datepicker-popup="{{format}}"
+                                               ng-model="product.timestamp"
+                                               >
+                                    </div>
+                                   </div>
+                            </div>
+                        </div>
+
+                        
+                        <button type="submit" ng-click="update(product)" class="btn btn-success btn-primary">Update</button>
+
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

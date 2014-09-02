@@ -1,0 +1,78 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>User</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                    {{user}}
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="user.name" placeholder="Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User Name</label>
+                            <input type="text" class="form-control" ng-model="user.username" placeholder="User Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">Password</label>
+                                    <input  type="password"
+                                            class="form-control"
+                                            required
+                                            name="type_something"
+                                            data-ng-trim='false'
+                                            ng-model="user.password"
+                                            disabled
+                                    >                        
+                                    <span></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">Confirm Password</label>
+                                    <input  type="password"
+                                            class="form-control"
+                                            required
+                                            name="confirm_type"
+                                            data-ng-trim='false'
+                                            ng-model="user.password"
+                                            disabled
+                                            
+                                    >                        
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="user.email" id="exampleInputEmail1" placeholder="Enter email" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mobile</label>
+                            <input type="text" class="form-control" ng-model="user.mobile" placeholder="Mobile" disabled>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">AccessLevel</label>
+                            <div>
+                        <label class="ui-radio"><input name="radio1" ng-model="user.accessleve" type="radio" value="1" disabled><span>Admin</span></label>
+                        <label class="ui-radio"><input name="radio1" ng-model="user.accessleve" type="radio" value="2" disabled><span>Dealer</span></label>
+                        <label class="ui-radio"><input name="radio1" ng-model="user.accessleve" type="radio" value="3" disabled><span>Sales</span></label>
+                        </div>
+                        </div>
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/user"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+   
+                    </form> 
+                    
+            </section>
+        </div>
+        </div>
+    </div>

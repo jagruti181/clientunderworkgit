@@ -1,0 +1,59 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Log User</strong>
+                
+                </div>
+                
+                <div class="panel-body" ng-controller="loguser">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                  <div class="bot">
+               <a href="#/loguser/loguser" class="right btn btn-primary">Create Log</a>
+                </div>
+                   <div class="msg"> {{demo}} </div>       
+                     <!--table loguser######################################-->
+                     <table class="table table-bordered table-striped">
+                        <thead><tr class="bg-dark">
+                            <th class="text-center">ID</th>
+                            <th class="text-center">STATE</th>
+                            <th class="text-center">IP ADDRESS</th>
+                            <th class="text-center">LAT</th>
+                            <th class="text-center">LONG</th>
+                            <th class="text-center">TIMESTAMP</th>
+                            <th class="text-center">ACTION</th>
+                            <th class="text-center">USER</th>
+                            <th colspan="2" class="text-center">OPERATIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="value in find">
+                            <td class="text-center">{{value.id}}</td>
+                            <td class="text-center">{{value.state}}</td>
+                                <td class="text-center">{{value.ip}}</td>
+                                <td class="text-center">{{value.lat}}</td>
+                                <td class="text-center">{{value.long}}</td>
+                                <td class="text-center">{{value.timestamp}}</td>
+                                <td class="text-center">{{value.action}}</td>
+                                <td class="text-center">{{value.user}}</td>
+                                <td class="text-center"><a ng-click="delete(value.id)" class="btn btn-primary"><i class="fa fa-times"></i></a></td>
+                                <td class="text-center"><a ng-click="showupdate(value.id,value.name,value.username,value.password,value.email,value.mobile,value.accessleve)" class="btn btn-primary">
+                                <i class="fa fa-pencil-square-o"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                     <!--table loguser######################################-->
+                    
+                    <!--edit user######################################-->
+                    <div ng-show="visible">
+                  
+                    </div>
+                    <!--edit user######################################-->
+            
+        </div>
+        </section>
+        </div>
+    </div>

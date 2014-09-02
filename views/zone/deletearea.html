@@ -1,0 +1,50 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+           
+           <div class="panel panel-primary">
+                
+                <div class="panel-heading">
+                    <h3 class="panel-title">Delete Area</h3>
+                </div>
+    <!---##############################################START AREA####################################################333-->
+                <div class="panel-body">
+                    
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                       <label for="exampleInputEmail1">City</label>
+                       <div>
+                        <span class="ui-select">
+                            <select  ng-model="area.city" disabled>
+                                <option ng-repeat="value in getcity" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="area.name" disabled placeholder="Name">
+                        </div>
+                        <label for="exampleInputEmail1">Distributor</label>
+                       <div>
+                        <span class="ui-select">
+                            <select  ng-model="area.distributor" disabled>
+                                <option ng-repeat="value in getdist" value="{{value.id}}">{{value.name}}</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div>
+                        
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/zone/area"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+    
+                   </div>
+                    </form> 
+                    
+                    
+                </div>
+    <!---##############################################End AREA####################################################333-->
+            </div>
+           
+           
+        </div>
+    </div>
